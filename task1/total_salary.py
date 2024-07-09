@@ -5,7 +5,6 @@ def total_salary(path):
     try:
         with open(path, 'r', encoding='utf-8') as file:
             for line in file:
-                # Розділяємо рядок на ім'я та заробітну плату за комою
                 parts = line.strip().split(',')
                 if len(parts) == 2:
                     name = parts[0].strip()
@@ -15,7 +14,6 @@ def total_salary(path):
                 else:
                     print(f"Неправильний формат рядка у файлі: {line}")
 
-        # Обчислюємо середню заробітню плату
         if count > 0:
             average_salary = total_sum / count
         else:
@@ -29,4 +27,5 @@ def total_salary(path):
     except Exception as e:
         print(f"Сталася помилка при обробці файлу: {e}")
         return 0, 0
+    
     
